@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const server = require("http").Server(app);
 const io = require("socket.io")(server);
-const PORT = 3001;
+const PORT = process.env.PORT || 3001;
 let users = [];
 app.get("/", (req, res) => {
   return res.send({ message: "Hi" });
